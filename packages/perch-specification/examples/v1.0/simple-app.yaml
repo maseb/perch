@@ -1,0 +1,24 @@
+perch: "1.0"
+info:
+  version: "0.0.1"
+  title: Simple Application
+
+templates:
+  primary:
+    type: component
+    component:
+      type: hosted
+      src: maseb/template-component
+
+screens:
+  /:
+    id: home
+    description: Landing page
+    title: Home
+    type: display
+    display:
+      type: template
+      template:
+        $ref: "#/templates/primary"
+      children: []
+      

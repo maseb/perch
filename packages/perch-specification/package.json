@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "perch-specification",
+  "version": "1.0.0",
+  "description": "Specification for the Perch Application Specification",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mason Browne <mason.browne@gmail.com>"
+}
