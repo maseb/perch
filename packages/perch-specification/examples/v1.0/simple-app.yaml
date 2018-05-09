@@ -10,6 +10,22 @@ templates:
       type: hosted
       src: maseb/template-component
 
+sources:
+  bit: 
+    scope: @bit
+    registry: https://node.bitsrc.io
+  # Local sources are only used in development mode. Local assumes that
+  # the local Perch runtime will register components in this scope
+  local:
+    scope: @local
+    
+
+components:
+  sampleLocalComponent:    
+    $component: "@local/samples.components.hello-world" 
+  sampleBitComponent:    
+    $component: "@bit/maseb.movie-app-example.components.navigation"
+
 screens:
   /:
     id: home
@@ -17,8 +33,8 @@ screens:
     title: Home
     type: display
     display:
-      type: template
-      template:
-        $ref: "#/templates/primary"
-      children: []
+      type: component
+      component:
+        $ref: "#/components/sampleLocalComponent"
+        
       
