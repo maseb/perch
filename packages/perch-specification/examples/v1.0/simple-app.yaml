@@ -1,40 +1,51 @@
-perch: "1.0"
+spec: "1.0"
 info:
   version: "0.0.1"
   title: Simple Application
 
-templates:
-  primary:
-    type: component
-    component:
-      type: hosted
-      src: maseb/template-component
 
 sources:
-  bit: 
+  foo: 
+    type: remote
     scope: @bit
     registry: https://node.bitsrc.io
   # Local sources are only used in development mode. Local assumes that
-  # the local Perch runtime will register components in this scope
-  local:
+  # the local Perch runtime will register components in this scope.
+  # This can also be used for forcing overrides for components that would
+  # otherwise be in a remote scope.
+  bar:
+    type: local
     scope: @local
-    
+  
+  # baz:
+  #   type: override
+  #   scope: @bit
+  #   overrides:
+  #     "@bit/maseb.movie-app-example.components.button":"@reason/sandbox.components.button"
 
-components:
-  sampleLocalComponent:    
-    $component: "@local/samples.components.hello-world" 
-  sampleBitComponent:    
-    $component: "@bit/maseb.movie-app-example.components.navigation"
-
-screens:
-  /:
-    id: home
-    description: Landing page
-    title: Home
-    type: display
-    display:
+application:
+  templates:
+    primary:
       type: component
       component:
-        $ref: "#/components/sampleLocalComponent"
+        type: hosted
+        src: maseb/template-component
+
+  components:
+    sampleLocalComponent:    
+      $component: "@local/maseb.perch-sandbox-reasonreact.components.Component1"
+    sampleBitComponent:    
+      $component: "@bit/maseb.movie-app-example.components.navigation"
+
+  screens:
+    /:
+      id: home
+      description: Landing page
+      title: Home
+      type: display
+      display:
+        $component: "@local/maseb.perch-sandbox-reasonreact.components.Component1"
+        attributes: {}
+        children: []
+          
         
-      
