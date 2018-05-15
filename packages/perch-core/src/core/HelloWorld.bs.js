@@ -1,4 +1,4 @@
-'use strict';
+
 
 
 function sayHello() {
@@ -6,5 +6,10 @@ function sayHello() {
   return /* () */0;
 }
 
-exports.sayHello = sayHello;
-/* No side effect */
+console.log("Hello, world");
+
+export {
+  sayHello ,
+  
+}
+/*  Not a pure module */

@@ -4,11 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "webpack": "webpack -w",
+    "dist:bundles:dev": "webpack",
+    "dist:bundles:production": "NODE_ENV=production webpack",
+    "dist:bundles": "webpack && NODE_ENV=production webpack"
   },
   "author": "Mason Browne <mason.browne@gmail.com>",
   "license": "UPL-1.0",
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "babel-loader": "^8.0.0-beta.2",
     "bs-platform": "^3.0.0",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3"

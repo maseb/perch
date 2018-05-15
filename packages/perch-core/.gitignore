@@ -1,3 +1,7 @@
 lib/bs/
 
 .merlin
+
+lib/
+
+dist/
