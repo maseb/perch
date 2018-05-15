@@ -1,0 +1,27 @@
+{
+    "name": "perch-core",
+    "bsc-flags": [
+        "-bs-no-version-header",
+        "-bs-super-errors"
+    ],
+    "reason": {
+        "react-jsx": 2
+    },
+    "version": "1.0.0",
+    "sources": {
+        "dir": "src",
+        "subdirs": true
+    },
+    "package-specs": {
+        "module": "commonjs",
+        "in-source": true
+    },
+    "suffix": ".bs.js",
+    "bs-dependencies": [
+        "reason-react"
+    ],
+    "warnings": {
+        "error": "+101"
+    },
+    "refmt": 3
+}
