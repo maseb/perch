@@ -1,1 +1,4 @@
-ReactDOMRe.renderToElementWithId(<PCHelloWorld />, "editor");
+ReactDOMRe.renderToElementWithId(
+  <PCUIEditor runtime=(PCRuntime.make()) />,
+  "editor",
+);
