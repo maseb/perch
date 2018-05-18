@@ -2,7 +2,7 @@ const path = require('path');
 const isProd = process.env.NODE_ENV === 'production';
 module.exports = {
     entry: {
-        editor: './src/core/PCEditorRoot.bs.js'
+        editor: './src/core/Main.bs.js'
     },
     mode: isProd ? 'production' : 'development',
     output: {
